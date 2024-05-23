@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('url');
             $table->text('img');
             $table->integer('sort');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

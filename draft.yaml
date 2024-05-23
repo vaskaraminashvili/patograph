@@ -6,3 +6,4 @@ models:
     url: string
     img: text
     sort: integer
+    deleted_at: timestamp
