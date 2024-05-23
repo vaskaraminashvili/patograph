@@ -34,20 +34,23 @@ class SliderResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
 //                    ->wrap()
+                        ->html()
                     ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->color(function ($state){
+                    ->color(function ($state) {
                         return $state->getColor();
                     })
                     ->badge(),
+                Tables\Columns\ImageColumn::make('img')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('url')
                     ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('sort')
                     ->numeric()
                     ->sortable()
-                ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -58,16 +61,17 @@ class SliderResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
+        //
+    ])
+        ->actions([
+            Tables\Actions\EditAction::make()
+            ->slideOver(),
+        ])
+        ->bulkActions([
+            Tables\Actions\BulkActionGroup::make([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]),
+        ]);
     }
 
     public static function getRelations(): array
@@ -82,7 +86,7 @@ class SliderResource extends Resource
         return [
             'index' => Pages\ListSliders::route('/'),
             'create' => Pages\CreateSlider::route('/create'),
-            'edit' => Pages\EditSlider::route('/{record}/edit'),
+//            'edit' => Pages\EditSlider::route('/{record}/edit'),
         ];
     }
 }
