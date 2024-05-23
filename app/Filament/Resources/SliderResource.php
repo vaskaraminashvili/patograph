@@ -22,26 +22,7 @@ class SliderResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('description')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('url')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('img')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('sort')
-                    ->required()
-                    ->numeric(),
-            ]);
+            ->schema(Slider::getFrom());
     }
 
     public static function table(Table $table): Table
@@ -49,16 +30,24 @@ class SliderResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->sortable()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
+//                    ->wrap()
+                    ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->searchable(),
+                    ->color(function ($state){
+                        return $state->getColor();
+                    })
+                    ->badge(),
                 Tables\Columns\TextColumn::make('url')
+                    ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('sort')
                     ->numeric()
-                    ->sortable(),
+                    ->sortable()
+                ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

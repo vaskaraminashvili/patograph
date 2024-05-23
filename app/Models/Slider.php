@@ -2,6 +2,11 @@
 
 namespace App\Models;
 
+use App\Enums\SliderStatus;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -30,5 +35,37 @@ class Slider extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'status' => SliderStatus::class,
     ];
+
+    public static function getFrom()
+    {
+        return [
+            Section::make('Main')
+                ->columns(3)
+            ->schema([
+                TextInput::make('title')
+                    ->columnSpanFull()
+                    ->required()
+                    ->maxLength(255),
+                RichEditor::make('description')
+                    ->columnSpanFull()
+                    ->required()
+                    ->maxLength(255),
+                FileUpload::make('img')
+                    ->required()
+                    ->columnSpanFull(),
+                TextInput::make('url')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('status')
+                    ->required()
+                    ->maxLength(255),
+                TextInput::make('sort')
+                    ->required()
+                    ->numeric(),
+
+            ])
+        ];
+    }
 }

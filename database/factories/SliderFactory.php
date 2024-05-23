@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Enums\SliderStatus;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 use App\Models\Slider;
@@ -23,7 +24,7 @@ class SliderFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text(),
-            'status' => $this->faker->word(),
+            'status' => $this->faker->randomElement(SliderStatus::class),
             'url' => $this->faker->url(),
             'img' => $this->faker->text(),
             'sort' => $this->faker->numberBetween(1, 100),
