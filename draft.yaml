@@ -1,0 +1,8 @@
+models:
+  Slider:
+    title : string
+    description : string
+    status: string
+    url: string
+    img: text
+    sort: integer

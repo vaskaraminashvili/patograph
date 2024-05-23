@@ -1,0 +1,7 @@
+created:
+    - database/factories/SliderFactory.php
+    - database/migrations/2024_05_23_142451_create_sliders_table.php
+    - app/Models/Slider.php
+models:
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
+    Slider: { title: string, description: string, status: string, url: string, img: text, sort: integer }
