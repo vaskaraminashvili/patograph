@@ -53,6 +53,7 @@ class Slider extends Model
                     ->required()
                     ->maxLength(255),
                 FileUpload::make('img')
+                    ->image()
                     ->required()
                     ->columnSpanFull(),
                 TextInput::make('url')
