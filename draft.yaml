@@ -1,5 +1,5 @@
 models:
-  Services:
+  Service:
     title : string
     description : string
     status: string

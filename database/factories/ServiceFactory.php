@@ -2,18 +2,19 @@
 
 namespace Database\Factories;
 
+use App\Enums\StatusEnums;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Services;
+use App\Models\Service;
 
-class ServicesFactory extends Factory
+class ServiceFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Services::class;
+    protected $model = Service::class;
 
     /**
      * Define the model's default state.
@@ -23,10 +24,10 @@ class ServicesFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text(),
-            'status' => $this->faker->word(),
-            'icon' => $this->faker->word(),
+            'status' => StatusEnums::class,
+            'icon' => 'heroicon',
             'img' => $this->faker->text(),
-            'sort' => $this->faker->numberBetween(-10000, 10000),
+            'sort' => $this->faker->numberBetween(0, 100),
             'deleted_at' => $this->faker->dateTime(),
         ];
     }

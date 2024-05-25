@@ -1,8 +1,9 @@
 created:
-    - database/factories/ServicesFactory.php
-    - database/migrations/2024_05_25_134642_create_services_table.php
-    - app/Models/Services.php
+    - database/factories/ServiceFactory.php
+    - database/migrations/2024_05_25_140434_create_services_table.php
+    - app/Models/Service.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
     Slider: { title: string, description: string, status: string, url: string, img: text, sort: integer }
     Services: { title: string, description: string, status: string, icon: string, img: text, sort: integer, deleted_at: timestamp }
+    Service: { title: string, description: string, status: string, icon: string, img: text, sort: integer, deleted_at: timestamp }

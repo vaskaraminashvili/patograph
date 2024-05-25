@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use App\Enums\StatusEnums;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Services extends Model
+class Service extends Model
 {
     use HasFactory;
 
@@ -30,6 +31,7 @@ class Services extends Model
      */
     protected $casts = [
         'id' => 'integer',
+        'status' => StatusEnums::class,
         'deleted_at' => 'timestamp',
     ];
 }
