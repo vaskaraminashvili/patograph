@@ -1,6 +1,7 @@
 models:
-  Service:
+  News:
     title : string
+    shortDesc : string
     description : string
     status: string
     icon: string
