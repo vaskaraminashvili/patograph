@@ -3,6 +3,10 @@
 namespace App\Models;
 
 use App\Enums\StatusEnums;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -34,4 +38,35 @@ class News extends Model
         'status' => StatusEnums::class,
         'deleted_at' => 'timestamp',
     ];
+
+
+    public static function getForm()
+    {
+        return [
+            Section::make()
+                ->columns(2)
+                ->schema([
+                    TextInput::make('title')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('shortDesc')
+                        ->required()
+                        ->maxLength(255),
+                    RichEditor::make('description')
+                        ->columnSpanFull()
+                        ->required()
+                        ->maxLength(255),
+                    FileUpload::make('img')
+                        ->required()
+                        ->columnSpanFull(),
+                    TextInput::make('status')
+                        ->required()
+                        ->maxLength(255),
+                    TextInput::make('sort')
+                        ->required()
+                        ->numeric(),
+
+                ])
+        ];
+    }
 }
