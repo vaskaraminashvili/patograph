@@ -24,7 +24,7 @@ class ServiceFactory extends Factory
         return [
             'title' => $this->faker->sentence(4),
             'description' => $this->faker->text(),
-            'status' => StatusEnums::class,
+            'status' => $this->faker->randomElement(StatusEnums::class),
             'icon' => 'heroicon',
             'img' => $this->faker->text(),
             'sort' => $this->faker->numberBetween(0, 100),
