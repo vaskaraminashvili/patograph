@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\SliderStatus;
+use App\Enums\StatusEnums;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
@@ -35,7 +35,7 @@ class Slider extends Model
      */
     protected $casts = [
         'id' => 'integer',
-        'status' => SliderStatus::class,
+        'status' => StatusEnums::class,
     ];
 
     public static function getFrom()

@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum SliderStatus: string
+enum StatusEnums: string
 {
     case published = 'published';
     case unpublished = 'unpublished';

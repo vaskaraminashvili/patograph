@@ -1,9 +1,10 @@
 models:
-  Slider:
+  Services:
     title : string
     description : string
     status: string
-    url: string
+    icon: string
     img: text
     sort: integer
     deleted_at: timestamp
+

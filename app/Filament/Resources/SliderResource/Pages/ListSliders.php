@@ -2,7 +2,7 @@
 
 namespace App\Filament\Resources\SliderResource\Pages;
 
-use App\Enums\SliderStatus;
+use App\Enums\StatusEnums;
 use App\Filament\Resources\SliderResource;
 use Filament\Actions;
 use Filament\Resources\Components\Tab;
@@ -17,14 +17,14 @@ class ListSliders extends ListRecords
         return [
             'all' => Tab::make("All Slides"),
             'published' => Tab::make("Published")
-                ->modifyQueryUsing(function ($query){
-                    return $query->where('status', SliderStatus::published);
+                ->modifyQueryUsing(callback: function ($query){
+                    return $query->where('status', StatusEnums::published);
                 }),
             'unpublished' => Tab::make("Unpublished")->modifyQueryUsing(function ($query){
-                return $query->where('status', SliderStatus::unpublished);
+                return $query->where('status', StatusEnums::unpublished);
             }),
             'draft' => Tab::make("Draft")->modifyQueryUsing(function ($query){
-                return $query->where('status', SliderStatus::draft);
+                return $query->where('status', StatusEnums::draft);
             }),
         ];
     }
