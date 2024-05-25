@@ -4,7 +4,6 @@ models:
     shortDesc : string
     description : string
     status: string
-    icon: string
     img: text
     sort: integer
     deleted_at: timestamp
