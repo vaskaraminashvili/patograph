@@ -5,13 +5,10 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\SliderResource\Pages;
 use App\Filament\Resources\SliderResource\RelationManagers;
 use App\Models\Slider;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class SliderResource extends Resource
 {
@@ -34,7 +31,7 @@ class SliderResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('description')
 //                    ->wrap()
-                        ->html()
+                    ->html()
                     ->limit(20)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
@@ -61,17 +58,17 @@ class SliderResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-        //
-    ])
-        ->actions([
-            Tables\Actions\EditAction::make()
-            ->slideOver(),
-        ])
-        ->bulkActions([
-            Tables\Actions\BulkActionGroup::make([
-                Tables\Actions\DeleteBulkAction::make(),
-            ]),
-        ]);
+                //
+            ])
+            ->actions([
+                Tables\Actions\EditAction::make()
+                    ->slideOver(),
+            ])
+            ->bulkActions([
+                Tables\Actions\BulkActionGroup::make([
+                    Tables\Actions\DeleteBulkAction::make(),
+                ]),
+            ]);
     }
 
     public static function getRelations(): array
