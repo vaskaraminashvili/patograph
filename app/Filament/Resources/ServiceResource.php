@@ -20,23 +20,7 @@ class ServiceResource extends Resource
     public static function form(Form $form): Form
     {
         return $form
-            ->schema([
-                Forms\Components\TextInput::make('title')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('status')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('icon')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\Textarea::make('img')
-                    ->required()
-                    ->columnSpanFull(),
-                Forms\Components\TextInput::make('sort')
-                    ->required()
-                    ->numeric(),
-            ]);
+            ->schema(Service::getForm());
     }
 
     public static function table(Table $table): Table
@@ -49,13 +33,16 @@ class ServiceResource extends Resource
                     ->limit(40)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
+                    ->color(function ($state){
+                        return $state->getColor();
+                    })
+                    ->badge()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('icon')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('sort')
-                    ->numeric()
-                    ->sortable()
+                Tables\Columns\ImageColumn::make('img')
+                    ->circular()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
@@ -74,7 +61,8 @@ class ServiceResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()
+                    ->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -95,7 +83,7 @@ class ServiceResource extends Resource
         return [
             'index' => Pages\ListServices::route('/'),
             'create' => Pages\CreateService::route('/create'),
-            'edit' => Pages\EditService::route('/{record}/edit'),
+//            'edit' => Pages\EditService::route('/{record}/edit'),
         ];
     }
 }
