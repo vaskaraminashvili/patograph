@@ -432,39 +432,7 @@
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper">
 				<!-- Slides -->
-				<div class="swiper-slide bg-border-color">
 
-					<div class="container">
-						<div class="row table-cell">
-
-							<div class="col-lg-12">
-
-								<div class="slider-content align-center">
-
-									<h1 class="slider-content-title" data-swiper-parallax="-100">Search Engine
-										Optimization!</h1>
-									<h5 class="slider-content-text c-gray" data-swiper-parallax="-200">Discover More About
-										Our SEO Expertise!</h5>
-
-									<div class="main-slider-btn-wrap" data-swiper-parallax="-300">
-
-										<a href="04_service_detail_seo.html"
-										   class="btn btn-medium btn--dark btn-hover-shadow">
-											<span class="text">learn more</span>
-											<span class="semicircle"></span>
-										</a>
-									</div>
-								</div>
-							</div>
-							<div class="col-lg-12">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img loading="lazy" src="front_assets/img/slider1.png" alt="slider">
-								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
 
 				<div class="swiper-slide bg-primary-color main-slider-bg-dark thumb-left">
 
@@ -550,45 +518,6 @@
 								<div class="slider-thumb" data-swiper-parallax="-300" data-swiper-parallax-duration="500">
 									<img loading="lazy" src="front_assets/img/slider3.png" alt="slider">
 								</div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-				<div class="swiper-slide bg-orange-color main-slider-bg-dark">
-					<div class="container table">
-						<div class="row table-cell">
-
-							<div class="col-lg-12">
-
-								<div class="slider-content align-center">
-									<h3 class="h1 slider-content-title c-dark" data-swiper-parallax="-100">Email
-										Marketing</h3>
-									<h5 class="slider-content-text" data-swiper-parallax="-200">We create tailored marketing
-										campaigns for each segment
-										of your audience to help advertise products and services in efforts to efficiently
-										and effectively engage new customers.
-									</h5>
-
-									<div class="main-slider-btn-wrap" data-swiper-parallax="-300">
-
-										<a href="07_service_email_marketing.html"
-										   class="btn btn-medium btn--dark btn-hover-shadow">
-											<span class="text">learn more</span>
-											<span class="semicircle"></span>
-										</a>
-
-									</div>
-
-								</div>
-
-							</div>
-
-							<div class="col-lg-12">
-								<div class="slider-thumb" data-swiper-parallax="-400" data-swiper-parallax-duration="600">
-									<img loading="lazy" src="front_assets/img/slider4.png" alt="slider">
-								</div>
-
 							</div>
 
 						</div>
