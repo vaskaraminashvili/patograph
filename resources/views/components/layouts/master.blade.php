@@ -3,11 +3,11 @@
 
 <!-- Mirrored from html.crumina.net/html-seosight/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 23 May 2024 12:10:03 GMT -->
 <head lang="en">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>Seosight - Index Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Seosight - Index Page</title>
 
-	<link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/fonts.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/fonts.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/crumina-fonts.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/normalize.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/grid.css')}}">
@@ -25,13 +25,13 @@
     <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/swiper.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/primary-menu.')}}css">
     <link rel="stylesheet" type="text/css" href="{{asset('front_assets/css/magnific-popup.css')}}">
-
+    @stack('styles')
     <!--Styles for RTL-->
 
 
     <!--External fonts-->
     <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
-@vite('resources/js/app.js')
+    @vite('resources/js/app.js')
 </head>
 
 <body class=" ">
@@ -257,7 +257,7 @@
                                         </li>
                                         <li>
                                             <a href="21_seo_analysis.html">SEO Analysis<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
 
                                         <li>
@@ -266,11 +266,11 @@
                                         </li>
                                         <li>
                                             <a href="09_our_clients.html">Our Special Clients<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
                                         <li>
                                             <a href="34_pricing-tables.html">Pricing Packages<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
                                         <li>
                                             <a href="404.html">404 Page<i class="seoicon-right-arrow"></i></a>
@@ -286,26 +286,26 @@
 
                                         <li>
                                             <a href="36_slider-with-photo.html">Main slider with photo<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
                                         <li>
                                             <a href="25_navigation-flat.html">Stunning Headers<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
 
                                         <li>
                                             <a href="37_navigation-with-photo.html">Sub-headers with photo<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
 
                                         <li>
                                             <a href="38_photo-elements.html">Photo elements<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
 
                                         <li>
                                             <a href="32_testimonials.html">Our Testimonials<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
 
                                     </ul>
@@ -324,7 +324,7 @@
                                         </li>
                                         <li>
                                             <a href="33_charts_counters.html">Charts &amp; Graphs<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
                                         <li>
                                             <a href="buttons.html">Buttons<i class="seoicon-right-arrow"></i></a>
@@ -332,7 +332,7 @@
 
                                         <li>
                                             <a href="28_popup-search.html">Popup Search<i
-                                                        class="seoicon-right-arrow"></i></a>
+                                                    class="seoicon-right-arrow"></i></a>
                                         </li>
 
                                     </ul>
@@ -549,18 +549,19 @@
                         <div class="icon js-animate-icon">
                             <svg enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64"
                                  xml:space="preserve" xmlns="http://www.w3.org/2000/svg"><path
-                                        d="  M45.1,44.2C42.9,42,39.6,40,37,42.6c-1.8,1.8-2.6,3.9-2.6,3.9s-4.3,2.3-11.7-5.2s-5.2-11.7-5.2-11.7s2.1-0.8,3.9-2.6  c2.6-2.6,0.6-5.9-1.7-8.1c-2.7-2.7-6.2-4.9-8.2-2.9c-3.7,3.7-4.4,8.4-4.4,8.4S9,35.5,18.7,45.3s20.9,11.6,20.9,11.6s4.7-0.7,8.4-4.4  C50,50.4,47.8,46.9,45.1,44.2z"
-                                        fill="none" stroke="#fcb03b" stroke-linecap="round" stroke-linejoin="round"
-                                        stroke-miterlimit="10" stroke-width="2"/>
+                                    d="  M45.1,44.2C42.9,42,39.6,40,37,42.6c-1.8,1.8-2.6,3.9-2.6,3.9s-4.3,2.3-11.7-5.2s-5.2-11.7-5.2-11.7s2.1-0.8,3.9-2.6  c2.6-2.6,0.6-5.9-1.7-8.1c-2.7-2.7-6.2-4.9-8.2-2.9c-3.7,3.7-4.4,8.4-4.4,8.4S9,35.5,18.7,45.3s20.9,11.6,20.9,11.6s4.7-0.7,8.4-4.4  C50,50.4,47.8,46.9,45.1,44.2z"
+                                    fill="none" stroke="#fcb03b" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-miterlimit="10" stroke-width="2"/>
                                 <path d="  M18.4,12.2C22.2,9.5,26.9,8,32,8c13.3,0,24,10.8,24,24c0,4-1.3,9-4.4,12.2"
                                       fill="none" stroke="#fcb03b" stroke-linecap="round" stroke-linejoin="round"
                                       stroke-miterlimit="10" stroke-width="2"/>
                                 <path d="  M27.3,55.6c-9.8-1.9-17.5-9.8-19.1-19.7" fill="none" stroke="#fcb03b"
                                       stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10"
                                       stroke-width="2"/>
-                                <path d="  M30,21c0,0,4.4,0,5.2,0c1.2,0,1.8,0.2,1.8,1.1s0,0.7,0,1.3c0,0.6,0,1.4-1.6,2.5c-2.3,1.6-5.6,3.8-5.6,5.1c0,1.6,0.7,2,1.8,2  s5.3,0,5.3,0"
-                                      fill="none" stroke="#fcb03b" stroke-linecap="round" stroke-linejoin="round"
-                                      stroke-miterlimit="10" stroke-width="2"/>
+                                <path
+                                    d="  M30,21c0,0,4.4,0,5.2,0c1.2,0,1.8,0.2,1.8,1.1s0,0.7,0,1.3c0,0.6,0,1.4-1.6,2.5c-2.3,1.6-5.6,3.8-5.6,5.1c0,1.6,0.7,2,1.8,2  s5.3,0,5.3,0"
+                                    fill="none" stroke="#fcb03b" stroke-linecap="round" stroke-linejoin="round"
+                                    stroke-miterlimit="10" stroke-width="2"/>
                                 <path d="  M40,21c0,0,0,2.8,0,3.8S39.9,27,41.5,27c1.6,0,4.5,0,4.5,0v-6.1V33" fill="none"
                                       stroke="#fcb03b" stroke-linecap="round" stroke-linejoin="round"
                                       stroke-miterlimit="10" stroke-width="2"/></svg>
@@ -595,8 +596,9 @@
                                       stroke-miterlimit="10" stroke-width="2"/>
                                 <g>
                                     <circle cx="45.4" cy="38.3" fill="#DCE9EE" r="0.9"/>
-                                    <path d="M45.4,37.3c-0.5,0-0.9,0.4-0.9,0.9c0,0.5,0.4,0.9,0.9,0.9s0.9-0.4,0.9-0.9C46.4,37.8,46,37.3,45.4,37.3   L45.4,37.3z"
-                                          fill="#f15b26"/>
+                                    <path
+                                        d="M45.4,37.3c-0.5,0-0.9,0.4-0.9,0.9c0,0.5,0.4,0.9,0.9,0.9s0.9-0.4,0.9-0.9C46.4,37.8,46,37.3,45.4,37.3   L45.4,37.3z"
+                                        fill="#f15b26"/>
                                 </g></svg>
                         </div>
                         <div class="content">

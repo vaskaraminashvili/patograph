@@ -8,143 +8,44 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
 
+                @foreach($data['slides'] as $slide)
+                    <div class="main-slider__slide swiper-slide bg-primary-color main-slider-bg-dark thumb-left"
+                         style="background-image: url({{asset('/storage/'.$slide->img)}});"
+                    >
 
-                <div class="swiper-slide bg-primary-color main-slider-bg-dark thumb-left">
+                        <div class="container table">
+                            <div class="row table-cell">
 
-                    <div class="container table">
-                        <div class="row table-cell">
+                                <div class="col-lg-5 table-cell">
+                                    <div class="slider-content">
+                                        <h3 class="slider-content-title" data-swiper-parallax="-100">
+                                            {{$slide->title}}
+                                        </h3>
+                                        <h6 class="slider-content-text" data-swiper-parallax="-200">
 
-                            <div class="col-lg-5 table-cell">
-                                <div class="slider-content">
-                                    <h3 class="slider-content-title" data-swiper-parallax="-100">
-                                        <span class="c-dark">Local SEO</span>
-                                        is about bringing
-                                        customers through
-                                        your doors.</h3>
-                                    <h6 class="slider-content-text" data-swiper-parallax="-200">Ut wisi enim ad minim
-                                        veniam, quis nostrud exerci tation
-                                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat
-                                        eleifend option.
-                                    </h6>
+                                            {{$slide->description}}
+                                        </h6>
 
-                                    <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
+                                        <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
 
-                                        <a href="05_service_details_localseo.html"
-                                           class="btn btn-medium btn--dark btn-hover-shadow">
-                                            <span class="text">learn more</span>
-                                            <span class="semicircle"></span>
-                                        </a>
+                                            <a href="{{$slide->url}}"
+                                               class="btn btn-medium btn--dark btn-hover-shadow">
+                                                <span class="text">learn more</span>
+                                                <span class="semicircle"></span>
+                                            </a>
 
-                                        <a href="05_service_details_localseo.html" class="btn btn-small btn--primary"
-                                           data-swiper-parallax="-300">
-                                            <span class="text">Our Services</span>
-                                            <i class="seoicon-right-arrow"></i>
-                                        </a>
+
+                                        </div>
 
                                     </div>
-
                                 </div>
-                            </div>
 
-                            <div class="col-lg-7 table-cell">
-                                <div class="slider-thumb" data-swiper-parallax="-300" data-swiper-parallax-duration="500">
-                                    <img loading="lazy" src="front_assets/img/slider2.png" alt="slider">
-                                </div>
-                            </div>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="swiper-slide bg-secondary-color main-slider-bg-dark">
+                @endforeach
 
-                    <div class="container table">
-                        <div class="row table-cell">
-                            <div class="col-lg-6 table-cell">
-
-                                <div class="slider-content">
-
-                                    <h3 class="h1 slider-content-title c-dark" data-swiper-parallax="-100">Social Media
-                                        Marketing Services
-                                    </h3>
-
-                                    <h5 class="slider-content-text" data-swiper-parallax="-200">An effective social strategy
-                                        can help you grow your
-                                        business, maintain your social presence and engage with the audience.
-                                    </h5>
-
-                                    <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
-
-                                        <a href="06_service_detail.html" class="btn btn-medium btn--dark btn-hover-shadow">
-                                            <span class="text">learn more</span>
-                                            <span class="semicircle"></span>
-                                        </a>
-
-                                        <a href="06_service_detail.html" class="btn btn-medium btn-border">
-                                            <span class="text">GET STARTED</span>
-                                            <span class="semicircle"></span>
-                                        </a>
-
-                                    </div>
-
-                                </div>
-
-                            </div>
-                            <div class="col-lg-6 table-cell">
-                                <div class="slider-thumb" data-swiper-parallax="-300" data-swiper-parallax-duration="500">
-                                    <img loading="lazy" src="front_assets/img/slider3.png" alt="slider">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-slide bg-green-color main-slider-bg-dark">
-
-                    <div class="container table">
-                        <div class="row table-cell">
-
-                            <div class="col-lg-6 table-cell">
-                                <div class="slider-content">
-
-                                    <h3 class="h1 slider-content-title c-dark" data-swiper-parallax="-100">Pay Per Click
-                                        (PPC)
-                                        Management
-                                    </h3>
-
-                                    <h5 class="slider-content-text" data-swiper-parallax="-200">Pay Per Click has an instant
-                                        impact and gives
-                                        your brand a much larger reach and exposure as a result of first page exposure on
-                                        major search engines.
-                                    </h5>
-
-                                    <div class="main-slider-btn-wrap" data-swiper-parallax="-300">
-
-                                        <a href="08_service_ppc_management.html"
-                                           class="btn btn-medium btn--dark btn-hover-shadow">
-                                            <span class="text">learn more</span>
-                                            <span class="semicircle"></span>
-                                        </a>
-
-                                        <a href="08_service_ppc_management.html"
-                                           class="btn btn-medium btn-border btn-hover-shadow">
-                                            <span class="text">GET STARTED</span>
-                                            <span class="semicircle"></span>
-                                        </a>
-
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6 table-cell">
-                                <div class="slider-thumb" data-swiper-parallax="-300" data-swiper-parallax-duration="500">
-                                    <img loading="lazy" src="front_assets/img/slider5.png" alt="slider">
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <!--Prev next buttons-->
@@ -211,6 +112,14 @@
 
 
     <!-- ... End Main Slider -->
-
-
 </x-layouts.master>
+
+<style>
+    .main-slider__slide {
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .main-slider__slide .container{
+        height: 70svh;
+    }
+</style>
