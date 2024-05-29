@@ -9,6 +9,9 @@ export default defineConfig({
                 ...refreshPaths,
                 'app/Livewire/**',
                 'app/Filament/**',
+                'resources/routes/**',
+                'routes/**',
+                'resources/views/**',
             ]
         }),
     ],
