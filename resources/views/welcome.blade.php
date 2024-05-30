@@ -112,6 +112,35 @@
 
 
     <!-- ... End Main Slider -->
+
+    <!-- Info-Box -->
+
+    <div class="container info-boxes pt100 pb100">
+
+        <div class="row">
+            @foreach($data['services'] as $service)
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+                    <div class="info-box--standard" data-mh="info-boxes">
+                        <div class="info-box-image">
+                            <img loading="lazy" src="https://dummyimage.com/100X100/000/fff" alt="image">
+                        </div>
+                        <div class="info-box-content">
+                            <h5 class="info-box-title">{{$service->title}}</h5>
+                            <p class="text">
+                                {{$service->descirption}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            @endforeach
+
+
+        </div>
+
+    </div>
+
+    <!-- ... End Info-Box -->
 </x-layouts.master>
 
 <style>
