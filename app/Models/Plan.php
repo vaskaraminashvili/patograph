@@ -23,6 +23,7 @@ class Plan extends Model
         'description',
         'status',
         'img',
+        'price',
         'sort',
     ];
 
@@ -47,6 +48,8 @@ class Plan extends Model
             RichEditor::make('description')
                 ->required()
                 ->columnSpanFull(),
+            TextInput::make('price')
+                ->numeric(),
             TextInput::make('status')
                 ->required()
                 ->maxLength(255),

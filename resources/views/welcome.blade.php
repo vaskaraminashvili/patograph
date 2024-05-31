@@ -291,11 +291,12 @@
 
                         <div class="swiper-wrapper">
                             @foreach($data['partners'] as $parnter)
-                            <div class="swiper-slide client-item">
-                                <a href="09_our_clients.html" class="client-image">
-                                    <img loading="lazy" src="{{asset('storage/'.$parnter->img)}}" alt="logo" class="hover">
-                                </a>
-                            </div>
+                                <div class="swiper-slide client-item">
+                                    <a href="09_our_clients.html" class="client-image">
+                                        <img loading="lazy" src="{{asset('storage/'.$parnter->img)}}" alt="logo"
+                                             class="hover">
+                                    </a>
+                                </div>
 
                             @endforeach
 
@@ -317,6 +318,59 @@
     </div>
 
     <!-- End Clients -->
+
+
+    <!-- Pricing table -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="pricing-tables medium-padding120 bg-border-color">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                            <div class="heading align-center">
+                                <h4 class="h1 heading-title">Our Pricing Packages</h4>
+                                <div class="heading-line">
+                                    <span class="short-line"></span>
+                                    <span class="long-line"></span>
+                                </div>
+                                <p class="heading-text">Claritas est etiam processus dynamicus,
+                                    qui sequitur mutationem consuetudium.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="pricing-tables-wrap">
+                            @foreach($data['plans'] as $plan)
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+                                    <div class="pricing-tables-item">
+                                        <div class="pricing-tables-icon">
+                                            <img loading="lazy" src="{{asset('storage/'.$plan->img)}}" alt="personal">
+                                        </div>
+                                        <a href="#" class="pricing-title">{{$plan->title}}</a>
+                                        {!!  $plan->description !!}
+                                        <h4 class="rate">${{$plan->price}}</h4>
+                                        <a href="20_checkout.html" class="btn btn-medium btn--dark">
+                                            <span class="text">Order Now!</span>
+                                            <span class="semicircle"></span>
+                                        </a>
+                                    </div>
+
+                                </div>
+                            @endforeach
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Pricing table -->
 
 </x-layouts.master>
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Partner;
+use App\Models\Plan;
 use App\Models\Project;
 use App\Models\Service;
 use App\Models\Slider;
@@ -43,12 +44,11 @@ class HomeController extends Controller
             ->get();
         $data['partners'] = $partners;
 
-        $plans = Partner::query()
+        $plans = Plan::query()
             ->latest('id')
-            ->limit(6)
+            ->limit(3)
             ->get();
         $data['plans'] = $plans;
-
 
 
         return view('welcome', compact('data'));
