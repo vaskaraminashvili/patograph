@@ -174,16 +174,17 @@
                     <div class="row">
                         <div class="case-item-wrap">
                             @foreach($data['projects'] as $project)
-                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                                <div class="case-item">
-                                    <div class="case-item__thumb">
-                                        <img loading="lazy" src="{{asset('storage/'.$project->img)}}" alt="our case">
+                                <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                    <div class="case-item">
+                                        <div class="case-item__thumb">
+                                            <img loading="lazy" src="{{asset('storage/'.$project->img)}}"
+                                                 alt="our case">
+                                        </div>
+                                        <h6 class="case-item__title"><a href="#">{{$project->title}}</a>
+                                        </h6>
+                                        {{$project->shortDesc}}
                                     </div>
-                                    <h6 class="case-item__title"><a href="#">{{$project->title}}</a>
-                                    </h6>
-                                    {{$project->shortDesc}}
                                 </div>
-                            </div>
 
                             @endforeach
 
@@ -225,19 +226,19 @@
                     </div>
                     <div class="row">
                         @foreach($data['team'] as $employee)
-                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
-                            <div class="info-box--standard-centered">
-                                <div class="info-box-image">
-                                    <img loading="lazy" src="{{asset('storage/'.$employee->img)}}" alt="image">
-                                </div>
-                                <div class="info-box-content">
-                                    <h4 class="info-box-title">{{$employee->name}} {{$employee->surname}}</h4>
-                                    <p class="text">
-                                        {{$employee->description}}
-                                    </p>
+                            <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                                <div class="info-box--standard-centered">
+                                    <div class="info-box-image">
+                                        <img loading="lazy" src="{{asset('storage/'.$employee->img)}}" alt="image">
+                                    </div>
+                                    <div class="info-box-content">
+                                        <h4 class="info-box-title">{{$employee->name}} {{$employee->surname}}</h4>
+                                        <p class="text">
+                                            {{$employee->description}}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                         @endforeach
 
@@ -265,6 +266,58 @@
     </div>
 
     <!-- End TEAM -->
+
+    <!-- Clients -->
+
+    <div class="section">
+        <div class="client-carousel medium-padding120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-lg-offset-3 col-md-6 col-md-offset-3 col-sm-12 col-xs-12">
+                        <div class="heading align-center">
+                            <h4 class="h1 heading-title">Our Valuable Clients</h4>
+                            <div class="heading-line">
+                                <span class="short-line"></span>
+                                <span class="long-line"></span>
+                            </div>
+                            <p class="heading-text">Qui mutationem consuetudium. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="theme-module clients-slider-module">
+
+                    <div class="swiper-container pagination-bottom" data-show-items="4">
+
+                        <div class="swiper-wrapper">
+                            @foreach($data['partners'] as $parnter)
+                            <div class="swiper-slide client-item">
+                                <a href="09_our_clients.html" class="client-image">
+                                    <img loading="lazy" src="{{asset('storage/'.$parnter->img)}}" alt="logo" class="hover">
+                                </a>
+                            </div>
+
+                            @endforeach
+
+
+                        </div>
+
+                        <!--Prev Next Arrows-->
+                        <svg class="btn-next">
+                            <use xlink:href="#arrow-right"></use>
+                        </svg>
+
+                        <svg class="btn-prev">
+                            <use xlink:href="#arrow-left"></use>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- End Clients -->
+
 </x-layouts.master>
 
 <style>
