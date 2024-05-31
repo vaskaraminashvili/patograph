@@ -1,10 +1,28 @@
 models:
-  News:
+  Partner:
     title : string
     shortDesc : string
-    description : string
     status: string
     img: text
     sort: integer
     deleted_at: timestamp
+
+  Plan:
+    title: string
+    description: longtext
+    status: string
+    img: text
+    sort: integer
+    deleted_at: timestamp
+
+  Team:
+    name: string
+    surname: string
+    position: string
+    description: longtext
+    status: string
+    img: text
+    sort: integer
+    deleted_at: timestamp
+
 
