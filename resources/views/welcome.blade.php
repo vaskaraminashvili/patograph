@@ -146,6 +146,125 @@
     </div>
 
     <!-- ... End Info-Box -->
+
+
+    <!-- Projects -->
+
+    <div class="container">
+        <div class="row medium-padding120">
+            <div class="recent-case align-center">
+
+                <div class="col-lg-12">
+
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                            <div class="heading align-center">
+                                <h4 class="h1 heading-title">Our Projects</h4>
+                                <div class="heading-line">
+                                    <span class="short-line"></span>
+                                    <span class="long-line"></span>
+                                </div>
+                                <p class="heading-text">Claritas est etiam processus dynamicus,
+                                    qui sequitur mutationem consuetudium.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="case-item-wrap">
+                            @foreach($data['projects'] as $project)
+                            <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                                <div class="case-item">
+                                    <div class="case-item__thumb">
+                                        <img loading="lazy" src="{{asset('storage/'.$project->img)}}" alt="our case">
+                                    </div>
+                                    <h6 class="case-item__title"><a href="#">{{$project->title}}</a>
+                                    </h6>
+                                    {{$project->shortDesc}}
+                                </div>
+                            </div>
+
+                            @endforeach
+
+                        </div>
+                    </div>
+
+                    <a href="11_case_studies.html" class="btn btn-medium btn--dark">
+                        <span class="text">All Projects</span>
+                        <span class="semicircle"></span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End Projects -->
+
+    <!-- TEAM -->
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="background-mountains medium-padding120 scrollme">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+                            <div class="heading align-center">
+                                <h4 class="h1 heading-title">Our Team</h4>
+                                <div class="heading-line">
+                                    <span class="short-line"></span>
+                                    <span class="long-line"></span>
+                                </div>
+                                <p class="heading-text">Claritas est etiam processus dynamicus, qui sequitur mutationem
+                                    consuetudium.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach($data['team'] as $employee)
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                            <div class="info-box--standard-centered">
+                                <div class="info-box-image">
+                                    <img loading="lazy" src="{{asset('storage/'.$employee->img)}}" alt="image">
+                                </div>
+                                <div class="info-box-content">
+                                    <h4 class="info-box-title">{{$employee->name}} {{$employee->surname}}</h4>
+                                    <p class="text">
+                                        {{$employee->description}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        @endforeach
+
+
+                    </div>
+
+                    <div class="row align-center">
+                        <div class="btn-block">
+                            <a href="03_services.html" class="btn btn-medium btn--dark">
+                                <span class="text">More Info</span>
+                                <span class="semicircle"></span>
+                            </a>
+                            <a href="03_services.html" class="btn btn-medium btn--breez">
+                                <span class="text">Get Started!</span>
+                                <span class="semicircle"></span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- End TEAM -->
 </x-layouts.master>
 
 <style>
@@ -153,7 +272,8 @@
         background-repeat: no-repeat;
         background-size: cover;
     }
-    .main-slider__slide .container{
+
+    .main-slider__slide .container {
         height: 70svh;
     }
 </style>
