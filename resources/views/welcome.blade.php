@@ -17,7 +17,7 @@
                             <div class="row table-cell">
 
                                 <div class="col-lg-5 table-cell">
-                                    <div class="slider-content">
+                                    <div class="slider-content bg-transparent">
                                         <h3 class="slider-content-title" data-swiper-parallax="-100">
                                             {{$slide->title}}
                                         </h3>
@@ -118,11 +118,16 @@
     <div class="container info-boxes pt100 pb100">
 
         <div class="row">
+            <div class="col-12">
+                <h2 class="align-center mb-4">Services</h2>
+            </div>
+        </div>
+        <div class="row">
             @foreach($data['services'] as $service)
                 <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                     <div class="info-box--standard" data-mh="info-boxes">
                         <div class="info-box-image">
-                            <img loading="lazy" src="https://dummyimage.com/100X100/000/fff" alt="image">
+                            <img loading="lazy" src="{{asset('/storage/'.$service->img)}}" alt="image">
                         </div>
                         <div class="info-box-content">
                             <h5 class="info-box-title">{{$service->title}}</h5>

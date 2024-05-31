@@ -21,6 +21,7 @@ class HomeController extends Controller
             ->limit(6)
             ->get();
         $data['services'] = $services;
+//        dd($services);
         return view('welcome', compact('data'));
     }
 }
