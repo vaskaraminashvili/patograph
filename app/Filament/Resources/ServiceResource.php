@@ -33,7 +33,7 @@ class ServiceResource extends Resource
                     ->limit(40)
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->color(function ($state){
+                    ->color(function ($state) {
                         return $state->getColor();
                     })
                     ->badge()
@@ -68,7 +68,8 @@ class ServiceResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('id', 'desc');
     }
 
     public static function getRelations(): array

@@ -36,7 +36,7 @@ class TeamResource extends Resource
                 Tables\Columns\TextColumn::make('position')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->color(function ($state){
+                    ->color(function ($state) {
                         return $state->getColor();
                     })
                     ->badge()
@@ -67,7 +67,8 @@ class TeamResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('id', 'desc');
     }
 
     public static function getRelations(): array

@@ -59,13 +59,14 @@ class ProjectResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                ->slideOver(),
+                    ->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])
+            ->defaultSort('id', 'desc');
     }
 
     public static function getRelations(): array
