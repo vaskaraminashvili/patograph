@@ -2,25 +2,27 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ServiceResource\Pages;
-use App\Filament\Resources\ServiceResource\RelationManagers;
-use App\Models\Service;
+use App\Filament\Resources\PartnerResource\Pages;
+use App\Filament\Resources\PartnerResource\RelationManagers;
+use App\Models\Partner;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\SoftDeletingScope;
 
-class ServiceResource extends Resource
+class PartnerResource extends Resource
 {
-    protected static ?string $model = Service::class;
+    protected static ?string $model = Partner::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
 
     public static function form(Form $form): Form
     {
         return $form
-            ->schema(Service::getForm());
+            ->schema(Partner::getForm());
     }
 
     public static function table(Table $table): Table
@@ -29,21 +31,16 @@ class ServiceResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('description')
-                    ->limit(40)
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('status')
-                    ->color(function ($state) {
+                    ->color(function ($state){
                         return $state->getColor();
                     })
                     ->badge()
                     ->searchable(),
-                Tables\Columns\TextColumn::make('icon')
-                    ->searchable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\ImageColumn::make('img')
-                    ->circular()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('sort')
+
+                    ->badge()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('deleted_at')
                     ->dateTime()
                     ->sortable()
@@ -62,7 +59,7 @@ class ServiceResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make()
-                    ->slideOver(),
+                ->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -82,9 +79,9 @@ class ServiceResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListServices::route('/'),
-            'create' => Pages\CreateService::route('/create'),
-//            'edit' => Pages\EditService::route('/{record}/edit'),
+            'index' => Pages\ListPartners::route('/'),
+            'create' => Pages\CreatePartner::route('/create'),
+//            'edit' => Pages\EditPartner::route('/{record}/edit'),
         ];
     }
 }

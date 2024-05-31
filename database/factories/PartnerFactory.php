@@ -5,16 +5,16 @@ namespace Database\Factories;
 use App\Enums\StatusEnums;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
-use App\Models\Slider;
+use App\Models\Partner;
 
-class SliderFactory extends Factory
+class PartnerFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Slider::class;
+    protected $model = Partner::class;
 
     /**
      * Define the model's default state.
@@ -23,11 +23,11 @@ class SliderFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence(4),
-            'description' => $this->faker->text(),
+            'shortDesc' => $this->faker->word(),
             'status' => $this->faker->randomElement(StatusEnums::class),
-            'url' => $this->faker->url(),
             'img' => $this->faker->imageUrl(),
-            'sort' => $this->faker->numberBetween(1, 100),
+            'sort' => $this->faker->numberBetween(1, 40),
+            'deleted_at' => $this->faker->dateTime(),
         ];
     }
 }

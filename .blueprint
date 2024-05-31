@@ -1,10 +1,20 @@
 created:
-    - database/factories/NewsFactory.php
-    - database/migrations/2024_05_25_211550_create_news_table.php
-    - app/Models/News.php
+    - database/factories/PartnerFactory.php
+    - database/factories/PlanFactory.php
+    - database/factories/TeamFactory.php
+    - database/migrations/2024_05_31_123721_create_partners_table.php
+    - database/migrations/2024_05_31_123722_create_plans_table.php
+    - database/migrations/2024_05_31_123723_create_teams_table.php
+    - app/Models/Partner.php
+    - app/Models/Plan.php
+    - app/Models/Team.php
 models:
     User: { name: string, email: string, email_verified_at: 'timestamp nullable', password: string, remember_token: 'string:100 nullable' }
     Slider: { title: string, description: string, status: string, url: string, img: text, sort: integer }
     Services: { title: string, description: string, status: string, icon: string, img: text, sort: integer, deleted_at: timestamp }
     Service: { title: string, description: string, status: string, icon: string, img: text, sort: integer, deleted_at: timestamp }
     News: { title: string, shortDesc: string, description: string, status: string, img: text, sort: integer, deleted_at: timestamp }
+    Project: { title: string, shortDesc: string, description: string, status: string, img: text, sort: integer, deleted_at: timestamp }
+    Partner: { title: string, shortDesc: string, status: string, img: text, sort: integer, deleted_at: timestamp }
+    Plan: { title: string, description: longtext, status: string, img: text, sort: integer, deleted_at: timestamp }
+    Team: { name: string, surname: string, position: string, description: longtext, status: string, img: text, sort: integer, deleted_at: timestamp }

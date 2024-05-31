@@ -2,6 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\News;
+use App\Models\Project;
+use App\Models\Service;
 use App\Models\Slider;
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -16,6 +19,9 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
         Slider::factory(15)->create();
+        News::factory(15)->create();
+        Service::factory(15)->create();
+        Project::factory(15)->create();
         User::create([
             'name' => 'Admin',
             'email' => 'admin@email.com',
